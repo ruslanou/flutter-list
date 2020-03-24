@@ -39,11 +39,15 @@ Widget _myListView(BuildContext context) {
     'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
     'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatikan City'
     ];
-  return ListView.builder(
+  return ListView.separated(
+    itemCount: 1000,
     itemBuilder: (context, index) {
       return ListTile(
         title: Text('Row $index'),
       );
-    }
+    },
+    separatorBuilder: (context, index) {
+      return Divider();
+    },
   );
 }
