@@ -40,10 +40,9 @@ Widget _myListView(BuildContext context) {
     'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatikan City'
     ];
   return ListView.builder(
-    itemCount: europeanCountries.length,
     itemBuilder: (context, index) {
       return ListTile(
-        title: Text(europeanCountries[index]),
+        title: Text('Row $index'),
       );
     }
   );
