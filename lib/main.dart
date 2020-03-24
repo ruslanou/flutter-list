@@ -21,37 +21,39 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class BodyLayout extends StatelessWidget {
+class BodyLayout extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return _myListView(context);
-  }
+  _BodyLayoutState createState() => _BodyLayoutState();
 }
 
-Widget _myListView(BuildContext context) {
-  return ListView(
-    children: <Widget>[
-      ListTile(
-        title: Text('Sun'),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {
-          print('Sun');
-        },
-      ),
-      ListTile(
-        title: Text('Moon'),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {
-          print('Moon');
-        },
-      ),
-      ListTile(
-        title: Text('Star'),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {
-          print('Star');
-        },
-      )
-    ],
-  );
+class _BodyLayoutState extends State<BodyLayout> {
+  List<String> titles = ['Sun', 'Moon', 'Star'];
+  @override
+  Widget build(BuildContext context) {
+    return _myListView();
+  }
+  Widget _myListView() {
+    return ListView.builder(
+      itemCount: titles.length,
+      itemBuilder: (context, index) {
+        final item = titles[index];
+        return Card(
+          child: ListTile(
+            title: Text(item),
+            onTap: () {
+              setState(() {
+                titles.insert(index, 'Planet');
+              });
+            },
+            onLongPress: () {
+              setState(() {
+                titles.removeAt(index);
+              });
+            },
+          ),
+          
+        );
+      },
+    );
+  }
 }
