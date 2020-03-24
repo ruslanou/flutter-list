@@ -36,6 +36,7 @@ Widget _myListView(BuildContext context) {
           backgroundImage: AssetImage('assets/sun.jpeg'),
         ),
         title: Text('Sun'),
+        subtitle: Text('93 million miles away'),
         trailing: Icon(Icons.keyboard_arrow_right),
       ),
       ListTile(
