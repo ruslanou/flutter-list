@@ -29,28 +29,29 @@ class BodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  Widget column = Expanded(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text('title', style: TextStyle(fontSize: 16),),
-        Text('Subtitle')
-      ],
-    ),
-  );
-  return ListView.builder(
-    itemBuilder: (context, index) {
-      return Card(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            children: <Widget>[
-              column,
-              column,
-            ],
-          )
-        )
-      );
-    }
+  return ListView(
+    children: <Widget>[
+      ListTile(
+        title: Text('Sun'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Sun');
+        },
+      ),
+      ListTile(
+        title: Text('Moon'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Moon');
+        },
+      ),
+      ListTile(
+        title: Text('Star'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Star');
+        },
+      )
+    ],
   );
 }
