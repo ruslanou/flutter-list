@@ -29,24 +29,20 @@ class BodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  final europeanCountries = ['Albania', 'Andorra', 'Armenia', 'Austria',
-    'Azerbaijan', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria',
-    'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland',
-    'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland',
-    'Italy', 'Kazakhstan', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania',
-    'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 
-    'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia',
-    'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
-    'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatikan City'
-    ];
-  return ListView.builder(
-    scrollDirection: Axis.horizontal,
-    itemBuilder: (context, index) {
-      return Container(
-        margin: EdgeInsets.symmetric(horizontal: 1.0),
-        color: Colors.teal,
-        child: Text('$index'),
-      );
-    },
+  return ListView(
+    children: <Widget>[
+      ListTile(
+        leading: Icon(Icons.wb_sunny),
+        title: Text('Sun'),
+      ),
+      ListTile(
+        leading: Icon(Icons.brightness_3),
+        title: Text('Moon'),
+      ),
+      ListTile(
+        leading: Icon(Icons.star),
+        title: Text('Star'),
+      )
+    ],
   );
 }
