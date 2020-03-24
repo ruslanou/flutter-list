@@ -39,15 +39,14 @@ Widget _myListView(BuildContext context) {
     'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
     'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatikan City'
     ];
-  return ListView.separated(
-    itemCount: 1000,
+  return ListView.builder(
+    scrollDirection: Axis.horizontal,
     itemBuilder: (context, index) {
-      return ListTile(
-        title: Text('Row $index'),
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: 1.0),
+        color: Colors.teal,
+        child: Text('$index'),
       );
-    },
-    separatorBuilder: (context, index) {
-      return Divider();
     },
   );
 }
